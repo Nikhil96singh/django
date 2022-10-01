@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+
+
+
+{% block content%}
+<head>
+    <style>
+        .h6{
+            color:brown;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size:40px;
+            text-align: center;
+            
+        }
+        .jj{
+            color:brown;
+            
+            text-align: center;
+            
+            
+        }
+        .bbb{
+            background-color:white;
+            border-radius:2px solid blue;
+        }
+       
+        .img{
+            background-image:url('https://img.freepik.com/free-psd/food-menu-restaurant-web-banner-template_106176-812.jpg');
+            margin-top:-100;
+            text-align: center;
+            color:whitesmoke;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .hd{
+            color:whitesmoke;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+
+<div class="container img">
+    <form  method="post">
+        <h1 class="hd">signup here<h1><br>
+            {% csrf_token%}
+            {{form.as_p}}
+            <button class="bbb" type="submit" name="login">submit</button>
+            <br><br>
+            
+    
+    </form>
+</div>
+<br><br><br><br><br>
+
+{% endblock%}

@@ -1,0 +1,71 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+<head>
+    <style>
+        .form{
+            color:black;
+            border:none;
+            margin-left:30px;
+
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .hh{
+            margin-left:30px;
+        }
+        .bt{
+            background-color: black;
+            color: azure;
+        }
+        .im{
+            float: right;
+            margin-top:-870px;
+        }
+        .column{
+            display: table;
+            width:33.33%;
+        }
+        .row{
+            content:"";
+            clear: both;
+           
+        }
+        .ft{
+            margin-left:50px;
+        }
+        .map{
+            border:2px solid gray;
+        }
+        .ro{
+            background-color:lightcyan;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+
+<h1 class="hh">Make a </h1><br>
+<h1 class="hh">reservation</h1><br>
+<form class="form" method="POST">
+{%csrf_token%}
+{{ form.as_p}}
+<button class="bt" type="submit">Submit</button><br><br><br><br><br><br>
+</form>
+<img class="im"src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=816,fit=crop/ginza37pa0/OurStoryImg-mP44RxVMjnfeNDrZ.png" alt="">
+<div class="row ft ro">
+    <div class="column"><h1><i class="fa fa-clone"></i>Contacts</h1>
+    <p href=""><i class="fa fa-phone"></i>701-931-6988</p>
+    <p href=""><i class="fa fa-envelope"></i>info@ginza.com</p></div>
+
+    <div class="column"><h1><i class="fa fa-map-marker"></i>Location </h1>
+    <p href=""><i class="fa fa-map-pin"></i>1420 Willis Avenue</p>
+    <p href=""><i class="fa fa-map-pin"></i>Jacksonville, FL 32216</p></div>
+    <div class="column"><h1><i class="fa fa-clock-o" ></i>Hours</h1>
+    <p href=""><i class="fa fa-calendar" ></i>Monday - Sunday</p>
+    <p href=""><i class="fa fa-hourglass-start" ></i>10 am - 10 pm</p></div>
+</div>
+<br><br><br>
+<div class="map"  style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=206,%202nd%20Floor,%20Fortune%20Aura%20Business%20park%20(%20Kyro%20Building%201,%20Gurmeet%20Nagar,%20Bhanwarkua%20Main%20Road%20Landmark-%20Above%20Nexa%20Car%20Showroom,%20near%20Apple%20hospital,%20Indore,%20Madhya%20Pradesh%20452014+(2,brother%20Restaurant)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">swimming watch</a></iframe></div>
+
+{%endblock%}
+

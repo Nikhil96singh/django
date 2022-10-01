@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+
+{% block content%}
+<head>
+    <style>
+      .cs{
+        margin-left:400px;
+      }
+      .j{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color:brown;
+        text-align: center;
+      }
+    
+    </style>
+</head>
+
+<form class="cs" method="post">
+    <h1 class="j">join us</h1>
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type="submit" name="signup">submit</button>
+</form>
+
+
+{% endblock%}

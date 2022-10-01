@@ -1,0 +1,60 @@
+
+{% extends 'base.html'%}
+{% block content%}
+<head>
+    <style>
+        .container{
+            background-color:rgb(19, 221, 236);
+            width:1500px;
+
+        }
+        .r{
+            text-align: center;
+            background-color:rgb(205, 219, 141);
+            
+        }
+        h3{
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<marquee class="r"><h1> ALL-REVIEWS   &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;   &nbsp;   &nbsp;    &nbsp; ALL-REVIEWS</h1> </marquee>
+<img width="100%" src="https://th.bing.com/th/id/R.e2e3ec4078fcaf7b30eb084a0c0de08e?rik=c1uakhxcN9Mk%2bA&riu=http%3a%2f%2fwww.kinetik.uk.com%2fwp-content%2fuploads%2f2016%2f01%2fTime-for-review.jpg&ehk=nHwVCrJ3ZZFWzzG9Rm0iALpt%2fGUokYZQO8IK41QC7FM%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+<div id="table" class="container">
+{%for todo in todos%}
+<h3>{{todo.name}}</h3>
+<h2>{{todo.title}}</h2>
+<h2>{{todo.description}}</h2>
+<h2>{{todo.email}}</h2>
+<p>{{todo.created_at}}</p>
+<p>{{todo.updated_at}}</p>
+<p><a href="{% url 'todo:todoedit' todo.id%}"><button>Edit</button></a>
+    <a href="{% url 'todo:tododelete' todo.id%}"><button>Delete</button></a>
+</p>
+<hr>
+
+
+    {%endfor%}
+</div>
+<button><a id="downloadLink" onclick="exportF(this)">Download into Excel</a></button>
+
+
+<script>
+function exportF(elem) {
+  var table = document.getElementById("table");
+  var html = table.outerHTML;
+  var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
+  elem.setAttribute("href", url);
+  elem.setAttribute("download", "export.xls"); // Choose the file name
+  return false;
+}
+
+</script>
+
+
+
+
+
+
+{%endblock%}

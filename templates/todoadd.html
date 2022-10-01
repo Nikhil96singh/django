@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<head>
+    <style>
+        .ad{
+            float:right;
+            margin-bottom:800;
+        }
+        .todof{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color:black;
+            margin-left:50px;
+            border-radius:20px;
+            
+        }
+        .im{
+            margin-left:700px;
+            margin-top:-930px
+        }
+        .hh{
+            margin-left:50px;
+            
+        }
+    </style>
+</head>
+
+<h1 class="hh">Share Your Valuable .</h1>
+<h1 class="hh">Feedback With Us..</h1>
+<form class="todof" method="POST">
+{%csrf_token%}
+{{ form.as_p}}
+<button type="submit">Submit</button><br><br><br><br>
+</form>
+<img class="im" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=880,fit=crop/ginza37pa0/cust-A3QQRDJrPNTa3eWE.png" alt="">
+
+{%endblock%}
+
